@@ -1,0 +1,92 @@
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #222;
+}
+
+
+.grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(20, 30px); /* 20 columns */
+    grid-template-rows: repeat(12, 30px);    /* 12 rows */
+    grid-gap: 15px;
+    background-color: rgb(0, 0, 0);
+    padding-inline: 40px;
+    padding-block: 40px;
+    padding-bottom: 50px;
+    padding-right: 50px;
+    border-radius: 20px;
+}
+
+.led {
+    width: 30px;
+    height: 30px;
+    background-color: #292929;
+    border-radius: 50%;
+    transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.led.hovered {
+    background-color: var(--led-color, ); /* Change color on hover */
+    /* Enhanced glowing effect */
+    box-shadow: 
+                0 0 100px 130px rgba(var(--led-color-rgb, 201, 255, 94), 0.2);
+}
+
+.menu {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu label {
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: Poppins;
+}
+
+.menu input[type="color"] {
+    width: 100px;
+    height: 40px;
+    border: none;
+    padding: 0;
+
+}
+
+.draggable {
+    position: absolute;
+    z-index: 100000;
+    top: 50px;
+    left: 50px;
+}
+
+#dragImage {
+    width: 200px;
+    position: absolute;
+    cursor: grab; /* Initial cursor style */
+}
+
+#dragImage.grabbing {
+    cursor: grabbing; /* Cursor style while dragging */
+}
+
+.logo-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    cursor: pointer; /* Changes cursor to pointer when hovering over the logo */
+}
+
